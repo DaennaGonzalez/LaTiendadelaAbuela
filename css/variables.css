@@ -1,0 +1,38 @@
+:root {
+  --color-crema: #fff8e9;
+  --color-marfil: #f5e9d5;
+  --color-papel: #efe0c5;
+  --color-vino: #7d2638;
+  --color-vino-profundo: #541824;
+  --color-rojo-chile: #a53a32;
+  --color-terracota: #b65e42;
+  --color-mostaza: #c99a42;
+  --color-dorado: #d7b66b;
+  --color-verde-olivo: #667044;
+  --color-cafe: #5b3929;
+  --color-cafe-oscuro: #302019;
+  --color-texto: #35251e;
+  --color-texto-suave: #735e51;
+  --color-blanco: #fff;
+  --color-borde: rgba(91, 57, 41, 0.14);
+  --sombra-suave: 0 12px 35px rgba(84, 24, 36, 0.10);
+  --sombra-media: 0 20px 50px rgba(84, 24, 36, 0.17);
+  --sombra-fuerte: 0 26px 65px rgba(48, 32, 25, 0.22);
+  --radio-pequeno: 12px;
+  --radio-medio: 22px;
+  --radio-grande: 36px;
+  --transicion-suave: 300ms ease;
+  --transicion-elastica: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "DM Serif Text", Georgia, serif;
+  --font-body: "Sanchez", Georgia, serif;
+  --container: min(1180px, calc(100% - 40px));
+  --header-height: 86px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --container: min(100% - 28px, 1180px);
+    --header-height: 72px;
+  }
+}

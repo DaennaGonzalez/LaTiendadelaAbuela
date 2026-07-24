@@ -1,0 +1,1671 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+  color: var(--color-texto);
+  background: var(--color-crema);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 9999;
+  left: 1rem;
+  top: 1rem;
+  padding: .75rem 1rem;
+  color: var(--color-blanco);
+  background: var(--color-vino-profundo);
+  border-radius: 8px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-mostaza);
+  outline-offset: 4px;
+}
+
+.cream-texture {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-crema);
+}
+
+.cream-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 248, 233, .89), rgba(255, 248, 233, .89)),
+    url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .85rem;
+  color: var(--color-vino);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--color-mostaza);
+}
+
+.eyebrow--light {
+  color: var(--color-marfil);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  padding: .78rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .83rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: transform var(--transicion-elastica), color var(--transicion-suave), background var(--transicion-suave), box-shadow var(--transicion-suave);
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.button:active {
+  transform: scale(.96);
+}
+
+.button--primary {
+  color: var(--color-blanco);
+  background: var(--color-vino);
+  border-color: var(--color-vino);
+  box-shadow: 0 12px 26px rgba(125, 38, 56, .22);
+}
+
+.button--primary:hover {
+  background: var(--color-vino-profundo);
+  box-shadow: 0 16px 34px rgba(84, 24, 36, .28);
+}
+
+.button--secondary {
+  color: var(--color-vino);
+  background: rgba(255, 248, 233, .72);
+  border-color: rgba(125, 38, 56, .45);
+}
+
+.button--secondary:hover {
+  color: var(--color-blanco);
+  background: var(--color-vino);
+}
+
+.button--gold {
+  color: var(--color-cafe-oscuro);
+  background: var(--color-dorado);
+  border-color: var(--color-dorado);
+  box-shadow: 0 14px 30px rgba(48, 32, 25, .2);
+}
+
+.button--gold:hover {
+  background: #e6c67b;
+}
+
+.button--light-outline {
+  color: var(--color-crema);
+  border-color: rgba(255, 248, 233, .62);
+}
+
+.button--light-outline:hover {
+  color: var(--color-vino-profundo);
+  background: var(--color-crema);
+}
+
+.topbar {
+  position: relative;
+  z-index: 80;
+  color: rgba(255, 248, 233, .92);
+  background: var(--color-vino-profundo);
+  font-size: .69rem;
+  letter-spacing: .03em;
+}
+
+.topbar__inner {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topbar p {
+  margin: 0;
+}
+
+.topbar__links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.topbar a {
+  transition: color var(--transicion-suave);
+}
+
+.topbar a:hover {
+  color: var(--color-dorado);
+}
+
+.site-header {
+  position: sticky;
+  z-index: 70;
+  top: 0;
+  height: var(--header-height);
+  color: var(--color-cafe-oscuro);
+  background: rgba(255, 248, 233, .92);
+  border-bottom: 1px solid rgba(91, 57, 41, .08);
+  transition: height var(--transicion-suave), box-shadow var(--transicion-suave), background var(--transicion-suave);
+}
+
+.site-header.is-scrolled {
+  height: 70px;
+  background: rgba(255, 248, 233, .84);
+  box-shadow: 0 10px 34px rgba(84, 24, 36, .1);
+  backdrop-filter: blur(15px);
+}
+
+.site-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.brand {
+  display: flex;
+  min-width: 210px;
+  align-items: center;
+  gap: .7rem;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-serif);
+  font-size: .96rem;
+  line-height: 1.1;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.desktop-nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.8rem, 1.65vw, 1.7rem);
+}
+
+.desktop-nav a {
+  position: relative;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -.55rem;
+  width: 0;
+  height: 2px;
+  background: var(--color-vino);
+  transition: width var(--transicion-suave), left var(--transicion-suave);
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a[aria-current="true"]::after {
+  left: 0;
+  width: 100%;
+}
+
+.header-cta {
+  min-height: 44px;
+  padding-inline: 1rem;
+  font-size: .72rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  color: var(--color-vino);
+  background: transparent;
+  border: 1px solid rgba(125, 38, 56, .25);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background: rgba(48, 32, 25, .52);
+  backdrop-filter: blur(4px);
+}
+
+.mobile-menu__panel {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(88vw, 410px);
+  padding: 1.1rem 1.3rem 2rem;
+  overflow-y: auto;
+  color: var(--color-cafe-oscuro);
+  background-color: var(--color-crema);
+  background-image:
+    linear-gradient(rgba(255, 248, 233, .9), rgba(255, 248, 233, .9)),
+    url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+  box-shadow: -20px 0 60px rgba(48, 32, 25, .24);
+}
+
+.mobile-menu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.mobile-menu__head img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.mobile-menu__close {
+  width: 48px;
+  height: 48px;
+  color: var(--color-vino);
+  background: var(--color-marfil);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.mobile-menu nav {
+  display: grid;
+  padding: 1.4rem 0;
+}
+
+.mobile-menu nav a {
+  padding: .76rem .2rem;
+  border-bottom: 1px solid rgba(91, 57, 41, .1);
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+}
+
+.floating-seeds {
+  position: fixed;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.floating-seed {
+  position: absolute;
+  width: clamp(54px, 6.5vw, 96px);
+  height: auto;
+  opacity: .88;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(48, 32, 25, .2));
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.floating-seed--1 { left: 1%; top: 18%; transform: rotate(-18deg); }
+.floating-seed--2 { right: 2%; top: 17%; transform: rotate(16deg); }
+.floating-seed--3 { left: .5%; top: 72%; transform: rotate(-12deg); }
+.floating-seed--4 { right: .5%; top: 70%; transform: rotate(14deg); }
+.floating-seed--5 { left: 13%; top: 6%; transform: rotate(-8deg); }
+.floating-seed--6 { right: 14%; top: 9%; transform: rotate(10deg); }
+.floating-seed--7 { left: -.5%; top: 45%; transform: rotate(-15deg); }
+.floating-seed--8 { right: -.5%; top: 46%; width: clamp(64px, 7.5vw, 112px); transform: rotate(12deg); }
+.floating-seed--9 { right: 1%; top: 82%; transform: rotate(-5deg); }
+
+.hero {
+  min-height: min(850px, calc(100vh - 34px));
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-crema);
+}
+
+.hero::before {
+  background-image:
+    radial-gradient(circle at 72% 45%, rgba(201, 154, 66, .16), transparent 34%),
+    linear-gradient(100deg, rgba(255, 248, 233, .91), rgba(245, 233, 213, .86)),
+    url("../imgs/textura-tela-crema.webp");
+  opacity: 1;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: .96fr 1.04fr;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 4.5rem);
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 5;
+  transform: translateY(-42px);
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7.3vw, 7.1rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: .75;
+}
+
+.hero h1 em {
+  color: var(--color-terracota);
+  font-weight: 500;
+}
+
+.hero__lead {
+  max-width: 560px;
+  margin-bottom: .8rem;
+  color: var(--color-cafe);
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.hero__body {
+  max-width: 590px;
+  margin-bottom: 1.7rem;
+  color: var(--color-texto-suave);
+  font-size: clamp(.88rem, 1.1vw, 1rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.hero__signature {
+  margin: 1.3rem 0 0 2rem;
+  color: var(--color-vino);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-style: italic;
+  transform: rotate(-3deg);
+}
+
+.hero__visual {
+  position: relative;
+  min-height: clamp(510px, 52vw, 650px);
+}
+
+.hero__shape {
+  position: absolute;
+  z-index: 1;
+  inset: 8% 4% 4% 14%;
+  background: linear-gradient(150deg, var(--color-mostaza), #a96d31);
+  border-radius: 49% 51% 45% 55% / 37% 42% 58% 63%;
+  box-shadow: var(--sombra-fuerte);
+  transform: rotate(4deg);
+}
+
+.hero__textile {
+  position: absolute;
+  z-index: 0;
+  inset: 2% 0 30% 32%;
+  background-image: linear-gradient(rgba(84, 24, 36, .08), rgba(84, 24, 36, .08)), url("../imgs/texturas-tela-colores.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 48% 52% 64% 36% / 56% 44% 56% 44%;
+  box-shadow: var(--sombra-media);
+  transform: rotate(9deg);
+}
+
+.hero__grandma {
+  position: absolute;
+  z-index: 4;
+  inset: auto 8% 3% auto;
+  width: min(91%, 610px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 18px rgba(48, 32, 25, .24));
+}
+
+.hero__product {
+  position: absolute;
+  z-index: 5;
+  width: clamp(92px, 11vw, 150px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 12px rgba(48, 32, 25, .2));
+  will-change: transform;
+}
+
+.hero__product--one {
+  --product-rotation: -11deg;
+  left: -3%;
+  bottom: 24%;
+  animation: heroProductFloatOne 5.8s ease-in-out infinite;
+}
+
+.hero__product--two {
+  --product-rotation: 8deg;
+  right: -5%;
+  bottom: 13%;
+  animation: heroProductFloatTwo 6.4s ease-in-out -1.6s infinite;
+}
+
+.hero__product--three {
+  --product-rotation: 12deg;
+  right: -3%;
+  top: 25%;
+  width: clamp(75px, 9vw, 120px);
+  animation: heroProductFloatThree 5.2s ease-in-out -.8s infinite;
+}
+
+.hero__seal {
+  position: absolute;
+  z-index: 6;
+  top: 5%;
+  left: 4%;
+  width: 130px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  color: var(--color-vino-profundo);
+  background: var(--color-crema);
+  border: 2px solid var(--color-vino);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(255, 248, 233, .48), var(--sombra-suave);
+  font-size: .69rem;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+}
+
+.hero__seal strong {
+  color: var(--color-vino);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.ornamental-divider {
+  position: relative;
+  z-index: 2;
+  min-height: 58px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(84, 24, 36, .52), rgba(84, 24, 36, .52)),
+    url("../imgs/texturas-tela-colores.webp");
+  background-size: cover;
+  background-position: center;
+  border-block: 1px solid rgba(255, 248, 233, .42);
+}
+
+.ornamental-divider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(84, 24, 36, .56), rgba(84, 24, 36, .12), rgba(84, 24, 36, .56));
+  pointer-events: none;
+}
+
+.ornamental-divider__track {
+  position: relative;
+  z-index: 2;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  animation: ornamentalTicker 36s linear infinite;
+  will-change: transform;
+}
+
+.ornamental-divider__track p {
+  margin: 0;
+  padding-right: 1.25rem;
+  color: #fffdf7;
+  font-family: var(--font-serif);
+  font-size: clamp(.82rem, 1.2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(48, 32, 25, .54);
+  white-space: nowrap;
+}
+
+.ornamental-divider__track b {
+  padding-inline: .72rem;
+  color: #fffdf7;
+  font-size: 1.1em;
+}
+
+.benefits {
+  padding-block: 2.4rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.benefits::before {
+  opacity: .65;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-borde);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: .8rem;
+  padding: 1.25rem;
+  background: rgba(255, 253, 247, .82);
+  transition: background var(--transicion-suave), transform var(--transicion-elastica);
+}
+
+.benefit:hover {
+  z-index: 2;
+  background: var(--color-blanco);
+  transform: translateY(-4px);
+}
+
+.benefit__icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--color-vino);
+  background: var(--color-marfil);
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+
+.benefit h3 {
+  margin-bottom: .2rem;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.benefit p {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.catalog-intro,
+.location {
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+.catalog-intro {
+  overflow: hidden;
+}
+
+.catalog-intro::before,
+.about::before,
+.location::before {
+  opacity: .83;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: end;
+  gap: clamp(2rem, 7vw, 7rem);
+  margin-bottom: 3rem;
+}
+
+.section-heading h2,
+.about h2,
+.wholesale h2,
+.cta h2 {
+  margin-bottom: 0;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5.3rem);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: .9;
+}
+
+.section-heading h2 em,
+.about h2 em {
+  color: var(--color-terracota);
+  font-weight: 500;
+}
+
+.section-heading__copy {
+  color: var(--color-texto-suave);
+  font-size: .92rem;
+}
+
+.section-heading__copy p {
+  margin-bottom: .8rem;
+}
+
+.fine-print {
+  color: var(--color-verde-olivo);
+  font-size: .76rem;
+}
+
+.section-heading--center {
+  display: block;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading--center .eyebrow {
+  justify-content: center;
+}
+
+.seed-title-accent {
+  position: absolute;
+  z-index: 0;
+  top: 12%;
+  right: -7vw;
+  width: clamp(190px, 28vw, 410px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(rgba(255, 248, 233, .42), rgba(255, 248, 233, .58)), url("../imgs/textura-nueces-avenitas.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 52% 48% 61% 39% / 42% 58% 42% 58%;
+  opacity: .34;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.seed-title-accent span {
+  color: rgba(84, 24, 36, .48);
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  letter-spacing: .12em;
+  transform: rotate(8deg);
+}
+
+.wholesale {
+  position: relative;
+  isolation: isolate;
+  min-height: 680px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-marfil);
+  background: var(--color-vino-profundo);
+}
+
+.wholesale::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(84, 24, 36, .94), rgba(84, 24, 36, .94)),
+    url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+  opacity: 1;
+}
+
+.wholesale__grid {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: clamp(5rem, 8vw, 8rem);
+}
+
+.wholesale h2,
+.cta h2 {
+  color: var(--color-crema);
+}
+
+.wholesale h2 em,
+.cta h2 em {
+  color: var(--color-dorado);
+  font-weight: 500;
+}
+
+.wholesale__copy > p:not(.eyebrow) {
+  max-width: 600px;
+  color: rgba(255, 248, 233, .78);
+  font-size: .9rem;
+}
+
+.wholesale__copy .button {
+  margin-top: .7rem;
+}
+
+.wholesale__visual {
+  position: relative;
+  min-height: 430px;
+}
+
+.wholesale__visual img {
+  position: absolute;
+  width: clamp(190px, 24vw, 310px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 22px rgba(20, 8, 10, .3));
+}
+
+.wholesale__visual img:nth-child(1) {
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  transform: rotate(-8deg);
+}
+
+.wholesale__visual img:nth-child(2) {
+  z-index: 3;
+  left: 28%;
+  top: 0;
+}
+
+.wholesale__visual img:nth-child(3) {
+  z-index: 2;
+  right: -4%;
+  bottom: 4%;
+  transform: rotate(9deg);
+}
+
+.wholesale__seed-shape {
+  position: absolute;
+  z-index: 0;
+  right: -8%;
+  top: 5%;
+  width: clamp(320px, 47vw, 690px);
+  aspect-ratio: 1.2;
+  background-image: linear-gradient(rgba(84, 24, 36, .28), rgba(84, 24, 36, .28)), url("../imgs/textura-nueces-avenitas.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 64% 36% 48% 52% / 42% 58% 42% 58%;
+  opacity: .58;
+  transform: rotate(-6deg);
+}
+
+.wholesale__textile-line {
+  position: absolute;
+  z-index: 4;
+  inset: 0 auto 0 0;
+  width: 18px;
+  background: url("../imgs/texturas-tela-colores.webp") center / cover;
+}
+
+.wholesale__seal {
+  position: absolute;
+  z-index: 5;
+  right: 4%;
+  top: 8%;
+  width: 132px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: var(--color-vino-profundo);
+  background: var(--color-dorado);
+  border: 1px solid var(--color-crema);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(215, 182, 107, .18);
+  font-family: var(--font-serif);
+  font-size: .85rem;
+  line-height: 1.3;
+  text-align: center;
+  transform: rotate(7deg);
+}
+
+.about {
+  padding-block: clamp(6rem, 10vw, 9rem);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.about__gallery {
+  position: relative;
+  min-height: 610px;
+}
+
+.about__textile-frame {
+  position: absolute;
+  z-index: 0;
+  inset: 2% 11% 24% 2%;
+  background-image: linear-gradient(rgba(84, 24, 36, .08), rgba(84, 24, 36, .08)), url("../imgs/texturas-tela-colores.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 40% 60% 46% 54% / 52% 44% 56% 48%;
+  transform: rotate(-7deg);
+}
+
+.photo {
+  position: absolute;
+  margin: 0;
+  padding: .75rem;
+  background-color: var(--color-crema);
+  background-image: linear-gradient(rgba(255, 248, 233, .89), rgba(255, 248, 233, .89)), url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+  box-shadow: var(--sombra-fuerte);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photo--main {
+  z-index: 2;
+  inset: 6% 7% 6% 4%;
+  border-radius: 44% 56% 48% 52% / 52% 43% 57% 48%;
+  transform: rotate(-2deg);
+}
+
+.photo-note {
+  position: absolute;
+  z-index: 4;
+  left: -2%;
+  bottom: 3%;
+  width: 250px;
+  margin: 0;
+  padding: 1.2rem;
+  color: var(--color-crema);
+  background: var(--color-vino);
+  border-radius: var(--radio-pequeno);
+  box-shadow: var(--sombra-media);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.25;
+  transform: rotate(-4deg);
+}
+
+.about__copy > p:not(.eyebrow) {
+  color: var(--color-texto-suave);
+  font-size: .92rem;
+}
+
+.about blockquote {
+  margin: 1.8rem 0;
+  padding-left: 1.4rem;
+  color: var(--color-vino);
+  border-left: 3px solid var(--color-mostaza);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-style: italic;
+  line-height: 1.15;
+}
+
+.grandma-sayings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+}
+
+.grandma-sayings p {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin: 0;
+  padding: .85rem;
+  color: var(--color-crema);
+  background: var(--color-vino-profundo);
+  border: 1px solid rgba(201, 154, 66, .34);
+  border-radius: 18px 18px 18px 5px;
+  box-shadow: 0 9px 24px rgba(84, 24, 36, .1);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .055em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.grandma-sayings p:nth-child(even) {
+  color: var(--color-cafe-oscuro);
+  background: var(--color-dorado);
+  border-radius: 18px 18px 5px 18px;
+}
+
+.grandma-sayings img {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 4px rgba(48, 32, 25, .18));
+}
+
+.moments {
+  padding-block: clamp(5rem, 9vw, 8rem);
+  background: #fffdf7;
+}
+
+.moments__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+
+.moment {
+  position: relative;
+  min-height: 340px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-marfil);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-medio);
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-elastica), box-shadow var(--transicion-suave);
+}
+
+.moment:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--sombra-media);
+}
+
+.moment::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.moment--cook::before,
+.moment--pets::before {
+  background-image: linear-gradient(90deg, rgba(255, 248, 233, .25), rgba(255, 248, 233, .92)), url("../imgs/textura-nueces-avenitas.webp");
+  background-size: cover;
+  opacity: .23;
+}
+
+.moment--share::before {
+  inset: auto -60px -76px auto;
+  width: 270px;
+  height: 270px;
+  background:
+    linear-gradient(rgba(255, 248, 233, .36), rgba(255, 248, 233, .36)),
+    url("../imgs/textura-frituras.webp") center / cover;
+  border-radius: 50%;
+  opacity: .24;
+}
+
+.moment--business::before {
+  background-image: linear-gradient(rgba(255, 248, 233, .88), rgba(255, 248, 233, .88)), url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+}
+
+.moment--business::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  bottom: -60px;
+  width: 180px;
+  aspect-ratio: 1;
+  background: url("../imgs/textura-nueces-avenitas.webp") center / cover;
+  border-radius: 50%;
+  opacity: .18;
+}
+
+.moment--pets {
+  background: #fff;
+}
+
+.moment img {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 300px);
+  height: 300px;
+  justify-self: center;
+  object-fit: contain;
+  padding: .55rem;
+  filter: drop-shadow(0 13px 12px rgba(48, 32, 25, .14));
+  transition: transform var(--transicion-elastica);
+}
+
+.moment:hover img {
+  transform: scale(1.04) rotate(-2deg);
+}
+
+.moment > div {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 2rem .5rem;
+}
+
+.moment span {
+  color: var(--color-mostaza);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.moment h3 {
+  margin: .2rem 0 .6rem;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.moment p {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: .8rem;
+}
+
+.center-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--color-crema);
+  background: var(--color-vino);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgba(125, 38, 56, .94), rgba(125, 38, 56, .94)), url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+}
+
+.cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(440px, 48vw, 600px);
+  align-items: end;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-top: clamp(4rem, 7vw, 6rem);
+}
+
+.cta__inner > div {
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+}
+
+.cta p:not(.eyebrow) {
+  max-width: 690px;
+  color: rgba(255, 248, 233, .8);
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 1.5rem;
+}
+
+.cta img {
+  width: 100%;
+  max-height: 620px;
+  justify-self: end;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 16px 16px rgba(48, 32, 25, .24));
+}
+
+.cta__textile {
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: 12px;
+  background: url("../imgs/texturas-tela-colores.webp") center / cover;
+}
+
+.location__frame {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-papel);
+  border: 10px solid rgba(255, 253, 247, .92);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra-media);
+}
+
+.location__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: url("../imgs/texturas-tela-colores.webp") center / cover;
+}
+
+.location__visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ead9b9;
+}
+
+.location__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(239, 224, 197, .02), rgba(239, 224, 197, .34));
+  pointer-events: none;
+}
+
+.location__visual iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: sepia(.12) saturate(.85) contrast(.96);
+}
+
+.location__grandma {
+  position: absolute;
+  z-index: 3;
+  left: -1.5%;
+  bottom: -8px;
+  width: clamp(300px, 32vw, 450px);
+  height: auto;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: drop-shadow(12px 16px 16px rgba(48, 32, 25, .25));
+  pointer-events: none;
+  user-select: none;
+}
+
+.location__card {
+  position: relative;
+  z-index: 4;
+  width: min(430px, 44%);
+  margin: 2rem 4% 2rem auto;
+  padding: clamp(1.7rem, 4vw, 3rem);
+  background: var(--color-crema);
+  border: 1px solid rgba(91, 57, 41, .16);
+  border-radius: var(--radio-medio);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.location__card::before {
+  opacity: .82;
+  border-radius: inherit;
+}
+
+.location__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+  box-shadow: var(--sombra-suave);
+}
+
+.location__icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.location__provider img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.location__card h3 {
+  margin-bottom: .6rem;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.location__card > p:not(.eyebrow) {
+  color: var(--color-texto-suave);
+  font-size: .85rem;
+}
+
+.contact {
+  padding-block: clamp(5rem, 8vw, 7rem);
+  background: #fffdf7;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.contact-card {
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.6rem;
+  background: var(--color-crema);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-medio);
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-elastica), box-shadow var(--transicion-suave), border-color var(--transicion-suave);
+}
+
+.contact-card:hover {
+  border-color: rgba(125, 38, 56, .38);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-6px);
+}
+
+.contact-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  padding: .45rem;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+}
+
+.contact-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-card small {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--color-mostaza);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.contact-card strong {
+  display: block;
+  color: var(--color-vino-profundo);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.contact-card p {
+  margin: .45rem 0 0;
+  color: var(--color-texto-suave);
+  font-size: .74rem;
+}
+
+.contact-card > b {
+  color: var(--color-vino);
+}
+
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  padding-top: 5rem;
+  color: rgba(255, 248, 233, .78);
+  background: var(--color-vino-profundo);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgba(84, 24, 36, .96), rgba(84, 24, 36, .96)), url("../imgs/textura-tela-crema.webp");
+  background-size: cover;
+}
+
+.site-footer__textile {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 11px;
+  background: url("../imgs/texturas-tela-colores.webp") center / cover;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer__brand img {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+}
+
+.footer__brand h2 {
+  margin-bottom: .4rem;
+  color: var(--color-crema);
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.footer__brand p {
+  color: var(--color-dorado);
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.site-footer h3 {
+  margin-bottom: 1rem;
+  color: var(--color-dorado);
+  font-family: var(--font-serif);
+  font-size: .9rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+
+.site-footer nav {
+  display: grid;
+  gap: .55rem;
+}
+
+.site-footer nav a {
+  font-size: .72rem;
+  transition: color var(--transicion-suave), transform var(--transicion-suave);
+}
+
+.site-footer nav a:hover {
+  color: var(--color-crema);
+  transform: translateX(3px);
+}
+
+.footer__bottom {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 248, 233, .12);
+  font-size: .67rem;
+}
+
+.footer__bottom p {
+  margin: 0;
+}
+
+.floating-actions {
+  position: fixed;
+  z-index: 60;
+  right: clamp(.8rem, 2vw, 1.6rem);
+  bottom: clamp(.8rem, 2vw, 1.6rem);
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: .65rem;
+}
+
+.float-button {
+  position: relative;
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+  background: var(--color-vino);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(48, 32, 25, .26);
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  transition: transform var(--transicion-elastica), opacity var(--transicion-suave);
+}
+
+.float-button:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.float-button > img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+}
+
+.float-button--facebook {
+  width: 46px;
+  height: 46px;
+  background: #355892;
+  font-weight: 700;
+}
+
+.float-button--facebook > img {
+  width: 78%;
+  height: 78%;
+}
+
+.float-button--whatsapp {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  background: #247c50;
+}
+
+.float-button--whatsapp > img {
+  width: 88%;
+  height: 88%;
+}
+
+.float-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  width: max-content;
+  padding: .48rem .72rem;
+  color: var(--color-blanco);
+  background: #1e6843;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 700;
+  transform: translateX(6px);
+  transition: opacity var(--transicion-suave), transform var(--transicion-suave);
+}
+
+.float-button--whatsapp:hover .float-label,
+.float-button--whatsapp:focus-visible .float-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  padding: .4rem .65rem;
+  color: var(--color-crema);
+  background: var(--color-cafe-oscuro);
+  border-radius: 7px;
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: .66rem;
+  transition: opacity var(--transicion-suave);
+}
+
+.float-button:hover .tooltip,
+.float-button:focus-visible .tooltip {
+  opacity: 1;
+}
+
+.float-button--top {
+  width: 46px;
+  height: 46px;
+  margin-top: .2rem;
+  color: var(--color-vino);
+  background: var(--color-crema);
+  border: 1px solid rgba(125, 38, 56, .25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+.float-button--top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
