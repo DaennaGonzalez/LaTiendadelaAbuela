@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Tienda de la Abuela | Chiles, abarrotes, botanas y más</title>
+  <meta name="description" content="Explora el catálogo de La Tienda de la Abuela: chiles secos, abarrotes, botanas, gomas, cereales, granos, alimentos para mascotas y más.">
+  <meta name="theme-color" content="#541824">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="La Tienda de la Abuela">
+  <meta property="og:description" content="Tradición, sabor y variedad como en casa. Explora nuestro catálogo para el hogar, tu negocio y compras de mayoreo.">
+  <meta property="og:image" content="imgs/logo-principal.webp">
+  <link rel="icon" href="imgs/logo-principal.webp" type="image/webp">
+  <link rel="preload" href="imgs/abuela-bienvenida.webp" as="image" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Serif+Text:ital@0;1&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="css/animaciones.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/catalogo-productos.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+  <script src="js/navegacion.js" defer></script>
+  <script src="js/animaciones.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="topbar" aria-label="Información y accesos">
+    <div class="container topbar__inner">
+      <p>Productos para tu hogar, negocio y compras de mayoreo</p>
+      <nav class="topbar__links" aria-label="Accesos rápidos">
+        <a href="#ubicacion">Ubicación</a>
+        <a href="https://www.facebook.com/share/1MDFe4Zics/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#inicio" aria-label="La Tienda de la Abuela, ir al inicio">
+        <img src="imgs/logo-principal.webp" width="500" height="500" alt="Logotipo de La Tienda de la Abuela">
+        <span>La Tienda de la Abuela</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Productos</a>
+        <a href="#mayoreo">Mayoreo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <a class="button button--primary header-cta" href="#productos">Consultar productos <span aria-hidden="true">→</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+      <div class="mobile-menu__head">
+        <img src="imgs/logo-principal.webp" width="500" height="500" alt="">
+        <button class="mobile-menu__close" id="menu-close" type="button" aria-label="Cerrar menú">×</button>
+      </div>
+      <nav aria-label="Navegación móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Productos</a>
+        <a href="#mayoreo">Mayoreo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button button--primary" data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="floating-seeds" id="floating-seeds" aria-hidden="true">
+    <img class="floating-seed floating-seed--1" src="imgs/semilladecoracion-1.webp" width="500" height="500" alt="" data-dx="-220" data-dy="-150" data-mobile-inset="30" data-rotate="-18" data-spin="-28">
+    <img class="floating-seed floating-seed--2" src="imgs/semilladecoracion-2.webp" width="500" height="500" alt="" data-dx="190" data-dy="-170" data-mobile-inset="-26" data-rotate="16" data-spin="36">
+    <img class="floating-seed floating-seed--3" src="imgs/semilladecoracion-3.webp" width="500" height="500" alt="" data-dx="-210" data-dy="120" data-mobile-inset="28" data-rotate="-12" data-spin="-38">
+    <img class="floating-seed floating-seed--4" src="imgs/semilladecoracion-4.webp" width="500" height="500" alt="" data-dx="230" data-dy="110" data-mobile-inset="-32" data-rotate="14" data-spin="32">
+    <img class="floating-seed floating-seed--5" src="imgs/semilladecoracion-5.webp" width="500" height="500" alt="" data-dx="-170" data-dy="-210" data-mobile-inset="26" data-rotate="-8" data-spin="-24">
+    <img class="floating-seed floating-seed--6" src="imgs/semilladecoracion-6.webp" width="500" height="500" alt="" data-dx="190" data-dy="-210" data-mobile-inset="-28" data-rotate="10" data-spin="28">
+    <img class="floating-seed floating-seed--7" src="imgs/semilladecoracion-7.webp" width="500" height="500" alt="" data-dx="-190" data-dy="20" data-mobile-inset="34" data-rotate="-15" data-spin="-30">
+    <img class="floating-seed floating-seed--8" src="imgs/semilladecoracion-8.webp" width="500" height="500" alt="" data-dx="210" data-dy="15" data-mobile-inset="-34" data-rotate="12" data-spin="42">
+    <img class="floating-seed floating-seed--9" src="imgs/semilladecoracion-9.webp" width="500" height="500" alt="" data-dx="240" data-dy="40" data-mobile-inset="-28" data-rotate="-5" data-spin="26">
+  </div>
+
+  <main id="contenido">
+    <section class="hero cream-texture" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero-reveal">Bienvenidos a</p>
+          <h1 class="hero-reveal">La Tienda<br><em>de la Abuela</em></h1>
+          <p class="hero__lead hero-reveal">Tradición, sabor y variedad como en casa</p>
+          <p class="hero__body hero-reveal">Descubre una amplia selección de productos para tu hogar, tu negocio y tus compras de mayoreo, presentada con la cercanía y el cariño de siempre.</p>
+          <div class="hero__actions hero-reveal">
+            <a class="button button--primary" href="#productos">Explorar productos <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
+          <p class="hero__signature hero-reveal">Con el cariño de siempre</p>
+        </div>
+
+        <div class="hero__visual hero-reveal">
+          <div class="hero__textile" aria-hidden="true"></div>
+          <div class="hero__shape" aria-hidden="true"></div>
+          <img class="hero__grandma" src="imgs/abuela-bienvenida.webp" width="500" height="500" alt="Abuela dando la bienvenida con una libreta en la mano">
+          <img class="hero__product hero__product--one" src="imgs/nescafe.webp" width="500" height="500" alt="" aria-hidden="true">
+          <img class="hero__product hero__product--two" src="imgs/aceite-123.webp" width="500" height="500" alt="" aria-hidden="true">
+          <img class="hero__product hero__product--three" src="imgs/cacahuate-espanol-enchilado.webp" width="500" height="500" alt="" aria-hidden="true">
+          <div class="hero__seal" aria-hidden="true"><span>Para tu hogar</span><strong>y negocio</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornamental-divider" aria-label="Mayoreo, abarrotes, botanas, cereales, granos, dulces, hogar, negocio y variedad">
+      <div class="ornamental-divider__track">
+        <p>MAYOREO <b>*</b> ABARROTES <b>*</b> BOTANAS <b>*</b> CEREALES <b>*</b> GRANOS <b>*</b> DULCES <b>*</b> HOGAR <b>*</b> NEGOCIO <b>*</b> VARIEDAD <b>*</b></p>
+        <p aria-hidden="true">MAYOREO <b>*</b> ABARROTES <b>*</b> BOTANAS <b>*</b> CEREALES <b>*</b> GRANOS <b>*</b> DULCES <b>*</b> HOGAR <b>*</b> NEGOCIO <b>*</b> VARIEDAD <b>*</b></p>
+      </div>
+    </div>
+
+    <section class="benefits cream-texture" aria-labelledby="benefits-title">
+      <div class="container">
+        <h2 class="sr-only" id="benefits-title">Beneficios de La Tienda de la Abuela</h2>
+        <div class="benefits__grid">
+          <article class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">✦</span>
+            <div><h3>Gran variedad</h3><p>Encuentra distintas categorías para cada necesidad.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">♡</span>
+            <div><h3>Atención cercana</h3><p>Consulta directamente la disponibilidad de nuestros productos.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">⌂</span>
+            <div><h3>Hogar y negocio</h3><p>Opciones para compras personales y para surtir tu negocio.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">◇</span>
+            <div><h3>Compras de mayoreo</h3><p>Pregunta por disponibilidad y atención para pedidos de mayoreo.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-intro cream-texture" id="categorias">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Nuestro catálogo</p>
+            <h2>Todo lo que buscas, <em>en un solo lugar</em></h2>
+          </div>
+          <div class="section-heading__copy">
+            <p>Selecciona una categoría para descubrir la variedad de productos que tenemos disponibles.</p>
+            <p class="fine-print">Los precios y la disponibilidad se consultan directamente por WhatsApp.</p>
+          </div>
+        </div>
+        <div class="seed-title-accent" aria-hidden="true"><span>VARIEDAD</span></div>
+        <div class="categories-grid" id="categories-grid" aria-label="Categorías de productos"></div>
+      </div>
+    </section>
+
+    <section class="products-section" id="productos" aria-labelledby="products-title">
+      <div class="container">
+        <div class="products-toolbar reveal">
+          <div>
+            <p class="eyebrow">Explora, descubre y consulta</p>
+            <h2 id="products-title">Productos disponibles</h2>
+            <p id="products-count" class="products-count" aria-live="polite"></p>
+          </div>
+          <form class="search" id="search-form" role="search">
+            <label class="sr-only" for="product-search">Buscar un producto</label>
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input id="product-search" type="search" autocomplete="off" placeholder="Buscar un producto…">
+            <button id="clear-search" class="search__clear" type="button" aria-label="Limpiar búsqueda" hidden>×</button>
+          </form>
+        </div>
+        <div id="search-status" class="sr-only" aria-live="polite"></div>
+        <div class="products-grid" id="products-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">⌕</span>
+          <h3>No encontramos ese producto en el catálogo disponible.</h3>
+          <p>Prueba con otro nombre o selecciona una categoría diferente.</p>
+          <button class="button button--secondary" id="empty-clear" type="button">Limpiar búsqueda</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wholesale" id="mayoreo">
+      <div class="wholesale__seed-shape" aria-hidden="true"></div>
+      <div class="wholesale__textile-line" aria-hidden="true"></div>
+      <div class="container wholesale__grid">
+        <div class="wholesale__copy reveal">
+          <p class="eyebrow eyebrow--light">Menudeo y mayoreo</p>
+          <h2>Variedad para <em>tu negocio</em></h2>
+          <p>Además de compras para el hogar, en La Tienda de la Abuela puedes consultar disponibilidad para surtir tu negocio o realizar pedidos de mayoreo.</p>
+          <p>Pregunta directamente por los productos que necesitas y recibe atención personalizada.</p>
+          <a class="button button--gold" data-whatsapp-message="Hola, me gustaría recibir información sobre productos y disponibilidad para compras de mayoreo." target="_blank" rel="noopener noreferrer">Consultar mayoreo <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="wholesale__visual reveal" aria-label="Selección visual de productos disponibles">
+          <img src="imgs/aceite-nutrioli.webp" width="500" height="500" loading="lazy" decoding="async" alt="Frijol peruano">
+          <img src="imgs/tostileo.webp" width="500" height="500" loading="lazy" decoding="async" alt="Aceite Nutrioli">
+          <img src="imgs/jalapenos.webp" width="500" height="500" loading="lazy" decoding="async" alt="Botana surtida">
+          <div class="wholesale__seal" aria-hidden="true">Hogar · negocio · mayoreo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about cream-texture" id="nosotros">
+      <div class="container about__grid">
+        <div class="about__gallery reveal">
+          <div class="about__textile-frame" aria-hidden="true"></div>
+          <figure class="photo photo--main">
+            <img src="imgs/abuela-canasta.webp" width="500" height="500" loading="lazy" decoding="async" alt="Abuela sosteniendo una canasta con productos">
+          </figure>
+          <p class="photo-note">&ldquo;Porque una bolsa nunca es suficiente.&rdquo;</p>
+        </div>
+        <div class="about__copy reveal">
+          <p class="eyebrow">Nosotros</p>
+          <h2>Una tienda con <em>el cariño de la abuela</em></h2>
+          <p>En La Tienda de la Abuela reunimos productos pensados para acompañar la cocina, los antojos y el día a día de muchas familias, con una atención cercana y una experiencia sencilla.</p>
+          <p>Aquí encontrarás opciones para el hogar, para tu negocio y para compras de mayoreo, organizadas en un catálogo visual que hace más fácil descubrir nuestra variedad.</p>
+          <blockquote>“Porque los sabores de siempre también guardan recuerdos.”</blockquote>
+          <div class="grandma-sayings" aria-label="Frases de La Tienda de la Abuela">
+            <p><img src="imgs/semilladecoracion-4.webp" width="500" height="500" loading="lazy" decoding="async" alt="">Estoy a esto de ir a La Tienda de la Abuela.</p>
+            <p><img src="imgs/semilladecoracion-7.webp" width="500" height="500" loading="lazy" decoding="async" alt="">Un antojito nunca le hace da&ntilde;o a nadie.</p>
+            <p><img src="imgs/semilladecoracion-8.webp" width="500" height="500" loading="lazy" decoding="async" alt="">Perfecto para compartir... o no.</p>
+            <p><img src="imgs/semilladecoracion-9.webp" width="500" height="500" loading="lazy" decoding="async" alt="">Barriga llena, corazón contento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="moments" aria-labelledby="moments-title">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div><p class="eyebrow">Para cada momento</p><h2 id="moments-title">Variedad para <em>cada necesidad</em></h2></div>
+        </div>
+        <div class="moments__grid">
+          <article class="moment moment--cook reveal">
+            <img src="imgs/paracocinar.webp" width="500" height="500" loading="lazy" decoding="async" alt="Abuela preparando comida para la familia">
+            <div><span>01</span><h3>Para cocinar</h3><p>Ingredientes y productos para preparar los sabores de siempre.</p></div>
+          </article>
+          <article class="moment moment--share reveal">
+            <img src="imgs/paracompartir.webp" width="500" height="500" loading="lazy" decoding="async" alt="Ni&ntilde;os compartiendo una botana">
+            <div><span>02</span><h3>Para compartir</h3><p>Botanas, dulces y opciones para distintos antojos.</p></div>
+          </article>
+          <article class="moment moment--business reveal">
+            <img src="imgs/paratunegocio.webp" width="500" height="500" loading="lazy" decoding="async" alt="Encargada atendiendo una tienda de abarrotes">
+            <div><span>03</span><h3>Para tu negocio</h3><p>Consulta productos y disponibilidad para mayoreo.</p></div>
+          </article>
+          <article class="moment moment--pets reveal">
+            <img src="imgs/paratusmascotas.webp" width="500" height="500" loading="lazy" decoding="async" alt="Perro y gato junto a sus alimentos">
+            <div><span>04</span><h3>Para tus mascotas</h3><p>Alimentos para perros y gatos dentro de nuestro catálogo.</p></div>
+          </article>
+        </div>
+        <div class="center-action"><a class="button button--secondary" href="#categorias">Explorar categorías <span aria-hidden="true">↑</span></a></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__textile" aria-hidden="true"></div>
+      <div class="container cta__inner reveal">
+        <div>
+          <p class="eyebrow eyebrow--light">Atención directa</p>
+          <h2>¿Buscas un producto <em>en especial?</em></h2>
+          <p>Consulta la disponibilidad de nuestro catálogo y recibe atención directa para compras individuales o de mayoreo.</p>
+          <div class="cta__actions">
+            <a class="button button--gold" data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+            <a class="button button--light-outline" href="#categorias">Ver categorías</a>
+          </div>
+        </div>
+        <img src="imgs/abuela-probandobotana.webp" width="500" height="500" loading="lazy" decoding="async" alt="Abuela atendiendo por teléfono">
+      </div>
+    </section>
+
+    <section class="location cream-texture" id="ubicacion">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Encuéntranos</p><h2>Visita La Tienda <em>de la Abuela</em></h2></div>
+          <div class="section-heading__copy"><p>Ubícanos fácilmente en Google Maps y planea tu visita.</p></div>
+        </div>
+        <div class="location__frame reveal">
+          <div class="location__visual">
+            <iframe
+              title="Mapa de La Tienda de la Abuela en Oriental, Puebla"
+              src="https://www.google.com/maps?q=Tienda%20De%20La%20Abuela%2C%20Ayuntamiento%2C%20Col%20Centro%2C%2075020%20Oriental%2C%20Pue.&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <img class="location__grandma" src="imgs/abuela-senal.webp" width="500" height="500" loading="lazy" decoding="async" alt="Abuela señalando hacia la información para llegar a la tienda">
+          <article class="location__card cream-texture">
+            <span class="location__icon" aria-hidden="true"><img src="imgs/icono-maps.webp" width="1500" height="1500" alt=""></span>
+            <p class="eyebrow location__provider"><img src="imgs/icono-google.webp" width="768" height="768" alt="">Google Maps</p>
+            <h3>Cómo llegar</h3>
+            <p>Ayuntamiento, Col. Centro, 75020 Oriental, Puebla. Consulta la ruta desde donde te encuentres.</p>
+            <a class="button button--primary" href="https://maps.app.goo.gl/V9NGV2Fea15DYYUY8" target="_blank" rel="noopener noreferrer">Abrir en Google Maps <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div><p class="eyebrow">Hablemos</p><h2 id="contact-title">Consulta, descubre <em>y visítanos</em></h2></div>
+        </div>
+        <div class="contact__grid">
+          <a class="contact-card reveal" data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon" aria-hidden="true"><img src="imgs/icono-whatsapp.png" width="662" height="664" alt=""></span><div><small>WhatsApp</small><strong>276 110 4552</strong><p>Consulta disponibilidad directamente.</p></div><b aria-hidden="true">↗</b>
+          </a>
+          <a class="contact-card reveal" href="https://www.facebook.com/share/1MDFe4Zics/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon" aria-hidden="true"><img src="imgs/logo-facebook.webp" width="1000" height="1000" alt=""></span><div><small>Facebook</small><strong>La Tienda de la Abuela</strong><p>Visita nuestra página en Facebook.</p></div><b aria-hidden="true">↗</b>
+          </a>
+          <a class="contact-card reveal" href="https://maps.app.goo.gl/V9NGV2Fea15DYYUY8" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon" aria-hidden="true"><img src="imgs/icono-maps.webp" width="1500" height="1500" alt=""></span><div><small>Ubicación</small><strong>Google Maps</strong><p>Consulta la ruta para visitarnos.</p></div><b aria-hidden="true">↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__textile" aria-hidden="true"></div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="imgs/logo-principal.webp" width="500" height="500" loading="lazy" decoding="async" alt="Logotipo de La Tienda de la Abuela">
+        <div><h2>La Tienda de la Abuela</h2><p>Tradición, sabor y variedad como en casa.</p></div>
+      </div>
+      <div><h3>Navegación</h3><nav><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#mayoreo">Mayoreo</a></nav></div>
+      <div><h3>Categorías</h3><nav id="footer-categories"></nav></div>
+      <div><h3>Contacto</h3><nav><a data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer">WhatsApp: 276 110 4552</a><a href="https://www.facebook.com/share/1MDFe4Zics/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://maps.app.goo.gl/V9NGV2Fea15DYYUY8" target="_blank" rel="noopener noreferrer">Ubicación</a></nav></div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Catálogo informativo de productos para el hogar, negocio y compras de mayoreo.</p>
+      <p>© <span id="current-year"></span> La Tienda de la Abuela.</p>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="Accesos rápidos">
+    <a class="float-button float-button--facebook" href="https://www.facebook.com/share/1MDFe4Zics/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook"><img src="imgs/logo-facebook.webp" width="1000" height="1000" alt="" aria-hidden="true"><span class="tooltip">Facebook</span></a>
+    <a class="float-button float-button--whatsapp" data-whatsapp-message="Hola, me gustaría consultar la disponibilidad de algunos productos de La Tienda de la Abuela." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp"><img src="imgs/icono-whatsapp.png" width="662" height="664" alt="" aria-hidden="true"><span class="float-label">Consulta por WhatsApp</span></a>
+    <button class="float-button float-button--top" id="back-to-top" type="button" aria-label="Volver arriba"><span aria-hidden="true">↑</span></button>
+  </div>
+
+  <dialog class="product-modal" id="product-modal" aria-labelledby="modal-product-name">
+    <button class="modal__close" id="modal-close" type="button" aria-label="Cerrar modal">×</button>
+    <div class="modal__grid">
+      <div class="modal__image-wrap"><img id="modal-product-image" src="imgs/logo-principal.webp" width="500" height="500" alt=""></div>
+      <div class="modal__copy">
+        <p class="eyebrow" id="modal-product-category"></p>
+        <h2 id="modal-product-name"></h2>
+        <p>Consulta disponibilidad y opciones de compra.</p>
+        <a class="button button--primary" id="modal-whatsapp" href="" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
